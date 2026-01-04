@@ -1,117 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Bhangdiya - AI/ML Developer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishek | AI/ML Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg" />
+
+  <!-- Icons (Font Awesome) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">AB</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span class="logo-text">Abhishek</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-content reveal">
+        <p class="hero-kicker">👋 Namaste, I'm</p>
+        <h1 class="hero-title">
+          <span class="gradient-text">Abhishek Bhangdiya</span>
+        </h1>
+        <h2 class="hero-subtitle">
+          B.Tech CSE-AI/ML @ VIT Pune · Medical AI · ML · Automation
+        </h2>
+        <p class="hero-description">
+          Building intelligent systems in <span class="highlight">healthcare technology</span>,
+          image processing, and automation tools. Focused on shipping scalable
+          solutions that turn data into impact.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary-btn">
+            View Projects <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn ghost-btn">
+            Contact Me <i class="fa-regular fa-paper-plane"></i>
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/abhishekbhangdiya" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="mailto:abhishekbhangdiya@example.com">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="glass-card hero-card">
+          <div class="hero-avatar">
+            <!-- You can replace this with your own image -->
+            <span class="avatar-initials">AB</span>
+          </div>
+          <h3>AI/ML Engineer in Progress</h3>
+          <p>Turning ideas into impact, one commit at a time.</p>
+          <ul class="hero-tags">
+            <li>AI/ML</li>
+            <li>Healthcare</li>
+            <li>Full-Stack</li>
+            <li>Automation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator">
+      <span>Scroll</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="container section-inner">
+      <div class="section-header reveal">
+        <h2>About <span class="gradient-text">Me</span></h2>
+        <p>
+          Blending <span class="highlight">AI/ML</span>, software engineering, and
+          domain knowledge in healthcare to build real-world solutions.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text glass-card reveal">
+          <p>
+            I am a second-year B.Tech CSE-AIML student at VIT Pune, passionate about
+            designing and deploying intelligent systems that make healthcare safer,
+            faster, and more accessible.
+          </p>
+          <p>
+            My work spans medical image analysis, smart monitoring systems, digital twins,
+            and automation tools, with a strong foundation in DSA, DBMS, and full-stack
+            development.
+          </p>
+          <p>
+            Outside academics, hackathons, research, and open-source contributions help me
+            sharpen skills and collaborate with motivated teams.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">3+</span>
+              <span class="stat-label">Domains</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">2nd</span>
+              <span class="stat-label">Year</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards reveal">
+          <div class="info-card glass-card">
+            <h3><i class="fa-solid fa-microchip"></i> Focus Areas</h3>
+            <ul>
+              <li>Medical AI & Image Processing</li>
+              <li>Smart Monitoring & IoT</li>
+              <li>Automation & Developer Tools</li>
+              <li>Digital Twin & Simulation</li>
             </ul>
+          </div>
+          <div class="info-card glass-card">
+            <h3><i class="fa-solid fa-code"></i> Tech Stack</h3>
+            <ul>
+              <li>Python, C, JavaScript</li>
+              <li>HTML, CSS, SQL</li>
+              <li>Machine Learning, OpenCV</li>
+              <li>Git, GitHub, VS Code</li>
+            </ul>
+          </div>
+          <div class="info-card glass-card">
+            <h3><i class="fa-solid fa-bolt"></i> What I Value</h3>
+            <ul>
+              <li>Clean, maintainable code</li>
+              <li>User-centric problem solving</li>
+              <li>Fast learning and iteration</li>
+              <li>Clear documentation & teamwork</li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Abhishek Bhangdiya</h1>
-            <p class="subtitle">AI/ML Engineer | Full-Stack Developer | VIT Pune</p>
-            <p class="tagline">Building intelligent solutions with cutting-edge AI</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+  <!-- ================= PROJECTS ================= -->
+  <section class="section" id="projects">
+    <div class="container section-inner">
+      <div class="section-header reveal">
+        <h2>Featured <span class="gradient-text">Projects</span></h2>
+        <p>
+          A selection of projects spanning healthcare AI, smart systems, and web applications.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card glass-card reveal">
+          <div class="project-badge">Medical AI</div>
+          <h3>Lung Nodule Detection & Classification</h3>
+          <p>
+            Deep-learning based system to detect and classify lung nodules in chest CT scans,
+            assisting early diagnosis workflows.
+          </p>
+          <ul class="project-tags">
+            <li>Python</li>
+            <li>ML / DL</li>
+            <li>Medical Imaging</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card glass-card reveal">
+          <div class="project-badge">Smart Systems</div>
+          <h3>Smart Tourist Safety Monitoring</h3>
+          <p>
+            AI, blockchain, and geo-fencing powered platform offering real-time alerts and
+            safety insights for tourists in sensitive zones.
+          </p>
+          <ul class="project-tags">
+            <li>AI/ML</li>
+            <li>Blockchain</li>
+            <li>Geo-fencing</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card glass-card reveal">
+          <div class="project-badge">Sustainability</div>
+          <h3>Waste Classification & Recycling Recommender</h3>
+          <p>
+            Image-based waste classification tool suggesting optimal recycling or disposal
+            strategies for different categories.
+          </p>
+          <ul class="project-tags">
+            <li>Computer Vision</li>
+            <li>Python</li>
+            <li>ML</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card glass-card reveal">
+          <div class="project-badge">Digital Twin</div>
+          <h3>IoT Digital Twin Prototype</h3>
+          <p>
+            Real-time digital twin of a physical system with sensor data visualization and
+            analytics dashboard for monitoring.
+          </p>
+          <ul class="project-tags">
+            <li>IoT</li>
+            <li>Dashboard</li>
+            <li>Data Viz</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card glass-card reveal">
+          <div class="project-badge">Web Dev</div>
+          <h3>Automation & Developer Tools</h3>
+          <p>
+            Scripts and utilities to speed up repetitive workflows using Python automation
+            and smart helpers for developers.
+          </p>
+          <ul class="project-tags">
+            <li>Python</li>
+            <li>Automation</li>
+            <li>CLI Tools</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project-card glass-card reveal">
+          <div class="project-badge">Academics</div>
+          <h3>EDI & Academic Mini Projects</h3>
+          <p>
+            A collection of electronics design, DBMS, and DS-based mini projects showcasing
+            concepts and implementation depth.
+          </p>
+          <ul class="project-tags">
+            <li>DSA</li>
+            <li>DBMS</li>
+            <li>Digital Electronics</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-github"></i> Code
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="section" id="skills">
+    <div class="container section-inner">
+      <div class="section-header reveal">
+        <h2>Technical <span class="gradient-text">Skills</span></h2>
+        <p>
+          A quick overview of core technologies and tools used across projects and coursework.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skills-group glass-card reveal">
+          <h3><i class="fa-solid fa-terminal"></i> Programming</h3>
+          <div class="skill">
+            <span>Python</span>
+            <div class="skill-bar"><span data-level="90"></span></div>
+          </div>
+          <div class="skill">
+            <span>C</span>
+            <div class="skill-bar"><span data-level="80"></span></div>
+          </div>
+          <div class="skill">
+            <span>JavaScript</span>
+            <div class="skill-bar"><span data-level="75"></span></div>
+          </div>
+          <div class="skill">
+            <span>SQL</span>
+            <div class="skill-bar"><span data-level="70"></span></div>
+          </div>
+        </div>
+
+        <div class="skills-group glass-card reveal">
+          <h3><i class="fa-solid fa-brain"></i> AI / ML</h3>
+          <div class="skill">
+            <span>Machine Learning</span>
+            <div class="skill-bar"><span data-level="85"></span></div>
+          </div>
+          <div class="skill">
+            <span>Computer Vision</span>
+            <div class="skill-bar"><span data-level="80"></span></div>
+          </div>
+          <div class="skill">
+            <span>Data Processing</span>
+            <div class="skill-bar"><span data-level="75"></span></div>
+          </div>
+        </div>
+
+        <div class="skills-group glass-card reveal">
+          <h3><i class="fa-solid fa-layer-group"></i> Development</h3>
+          <div class="skill">
+            <span>HTML & CSS</span>
+            <div class="skill-bar"><span data-level="85"></span></div>
+          </div>
+          <div class="skill">
+            <span>Git & GitHub</span>
+            <div class="skill-bar"><span data-level="80"></span></div>
+          </div>
+          <div class="skill">
+            <span>REST & APIs</span>
+            <div class="skill-bar"><span data-level="70"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section class="section" id="education">
+    <div class="container section-inner">
+      <div class="section-header reveal">
+        <h2>Education & <span class="gradient-text">Journey</span></h2>
+        <p>
+          Academic path and milestones shaping the foundation for AI/ML and software engineering.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal glass-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>B.Tech CSE (AI & ML)</h3>
+            <p class="timeline-meta">VIT Pune · 2023 – Present</p>
+            <p>
+              Core courses: Data Structures & Algorithms, DBMS, OOP, Digital Electronics,
+              Climatology, AI/ML, and related labs.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal glass-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>AI/ML & Project Work</h3>
+            <p class="timeline-meta">Self-driven · Ongoing</p>
+            <p>
+              Building medical AI systems, smart monitoring platforms, automation tools, and
+              participating in hackathons and research-driven projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section" id="contact">
+    <div class="container section-inner">
+      <div class="section-header reveal">
+        <h2>Let’s <span class="gradient-text">Connect</span></h2>
+        <p>
+          Open to research collaborations, internships, and impactful tech projects.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card glass-card reveal">
+          <h3><i class="fa-regular fa-address-card"></i> Contact Info</h3>
+          <ul class="contact-list">
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:abhishekbhangdiya@example.com">
+                abhishekbhangdiya@example.com
+              </a>
+            </li>
+            <li>
+              <i class="fa-brands fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/abhishekbhangdiya" target="_blank" rel="noreferrer">
+                linkedin.com/in/abhishekbhangdiya
+              </a>
+            </li>
+            <li>
+              <i class="fa-brands fa-github"></i>
+              <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
+                github.com/Abhishek2586
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form glass-card reveal" onsubmit="event.preventDefault();">
+          <h3><i class="fa-regular fa-paper-plane"></i> Quick Message</h3>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your name" required />
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I'm a 2nd-year B.Tech student in CSE-AIML at VIT Pune. Passionate about AI/ML, full-stack development, and solving real-world problems through technology. I actively participate in hackathons and develop innovative projects.</p>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-tags"><span>Python</span><span>C</span><span>JavaScript</span><span>SQL</span></div>
-                </div>
-                <div class="skill-category">
-                    <h3>Web</h3>
-                    <div class="skill-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span></div>
-                </div>
-                <div class="skill-category">
-                    <h3>AI/ML</h3>
-                    <div class="skill-tags"><span>NumPy</span><span>Pandas</span><span>Scikit-learn</span><span>TensorFlow</span></div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <div class="skill-tags"><span>Git</span><span>VS Code</span><span>MySQL</span><span>Jupyter</span></div>
-                </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="your@email.com" required />
             </div>
-        </div>
-    </section>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Write your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn primary-btn full-width">
+            Send Message <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          <p class="form-note">
+            This is a demo form. You can connect with me directly via email or LinkedIn.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Lung Nodule Detection in CT Scans</h3>
-                    <p>AI/ML model for detecting and classifying lung nodules using deep learning.</p>
-                    <span class="project-tag">Python</span> <span class="project-tag">TensorFlow</span>
-                </div>
-                <div class="project-card">
-                    <h3>Smart Tourist Safety Monitoring</h3>
-                    <p>IoT-enabled system combining AI, blockchain, and geo-fencing.</p>
-                    <span class="project-tag">AI/ML</span> <span class="project-tag">Blockchain</span>
-                </div>
-                <div class="project-card">
-                    <h3>Waste Classification System</h3>
-                    <p>ML-based automatic waste classification using image recognition.</p>
-                    <span class="project-tag">Python</span> <span class="project-tag">OpenCV</span>
-                </div>
-                <div class="project-card">
-                    <h3>Digital Twin & IoT</h3>
-                    <p>Real-time digital twin visualization with predictive analytics.</p>
-                    <span class="project-tag">IoT</span> <span class="project-tag">Analytics</span>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Abhishek Bhangdiya. Built with passion.</p>
+      <p>“Always learning, always building, always innovating.”</p>
+    </div>
+  </footer>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-links">
-                <a href="mailto:your-email@gmail.com" class="contact-link">Email</a>
-                <a href="https://linkedin.com/in/abhishek-bhangdiya" target="_blank" class="contact-link">LinkedIn</a>
-                <a href="https://github.com/Abhishek2586" target="_blank" class="contact-link">GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>&copy; 2025 Abhishek Bhangdiya. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
