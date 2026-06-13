@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhishek | AI/ML Portfolio</title>
+  <meta name="description" content="Abhishek Bhangdiya — AI/ML engineer building healthcare computer vision and multi-agent AI systems. B.Tech AIML, VIT Pune." />
+  <title>Abhishek Bhangdiya — AI/ML Engineer</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg" />
 
-  <!-- Icons (Font Awesome) -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -20,480 +28,380 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Ambient texture + cursor glow -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ================= PRELOADER ================= -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <pre class="boot-log" id="boot-log" aria-hidden="true"></pre>
+    </div>
+  </div>
+  <noscript>
+    <style>.preloader{ display:none !important; }</style>
+  </noscript>
+
   <!-- ================= HEADER / NAV ================= -->
   <header class="header">
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
     <div class="container nav-container">
       <a href="#home" class="logo">
-        <span class="logo-mark">&lt;/&gt;</span>
-        <span class="logo-text">Abhishek</span>
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 44 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 12H10L13 3L19 21L23 7L26 12H43" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="logo-text">abhishek<span class="logo-dot">.</span>dev</span>
       </a>
 
       <nav class="nav" id="nav">
-        <ul class="nav-links">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="nav-link" data-nav="home"><span class="nav-index">00</span>Home</a></li>
+          <li><a href="#about" class="nav-link" data-nav="about"><span class="nav-index">01</span>About</a></li>
+          <li><a href="#work" class="nav-link" data-nav="work"><span class="nav-index">02</span>Work</a></li>
+          <li><a href="#skills" class="nav-link" data-nav="skills"><span class="nav-index">03</span>Skills</a></li>
+          <li><a href="#journey" class="nav-link" data-nav="journey"><span class="nav-index">04</span>Journey</a></li>
+          <li><a href="#contact" class="nav-link" data-nav="contact"><span class="nav-index">05</span>Contact</a></li>
         </ul>
       </nav>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="home">
-    <div class="container hero-inner">
-      <div class="hero-content reveal">
-        <p class="hero-kicker">👋 Namaste, I'm</p>
-        <h1 class="hero-title">
-          <span class="gradient-text">Abhishek Bhangdiya</span>
-        </h1>
-        <h2 class="hero-subtitle">
-          B.Tech CSE-AI/ML @ VIT Pune · Medical AI · ML · Automation
-        </h2>
-        <p class="hero-description">
-          Building intelligent systems in <span class="highlight">healthcare technology</span>,
-          image processing, and automation tools. Focused on shipping scalable
-          solutions that turn data into impact.
-        </p>
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
 
-        <div class="hero-actions">
-          <a href="#projects" class="btn primary-btn">
-            View Projects <i class="fa-solid fa-arrow-right"></i>
-          </a>
-          <a href="#contact" class="btn ghost-btn">
-            Contact Me <i class="fa-regular fa-paper-plane"></i>
-          </a>
-        </div>
-
-        <div class="hero-socials">
-          <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/abhishekbhangdiya" target="_blank" rel="noreferrer">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="mailto:abhishekbhangdiya@example.com">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal">
-        <div class="glass-card hero-card">
-          <div class="hero-avatar">
-            <!-- You can replace this with your own image -->
-            <span class="avatar-initials">AB</span>
-          </div>
-          <h3>AI/ML Engineer in Progress</h3>
-          <p>Turning ideas into impact, one commit at a time.</p>
-          <ul class="hero-tags">
-            <li>AI/ML</li>
-            <li>Healthcare</li>
-            <li>Full-Stack</li>
-            <li>Automation</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <a href="#about" class="scroll-indicator">
-      <span>Scroll</span>
-      <i class="fa-solid fa-chevron-down"></i>
-    </a>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section class="section" id="about">
-    <div class="container section-inner">
-      <div class="section-header reveal">
-        <h2>About <span class="gradient-text">Me</span></h2>
-        <p>
-          Blending <span class="highlight">AI/ML</span>, software engineering, and
-          domain knowledge in healthcare to build real-world solutions.
-        </p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-text glass-card reveal">
-          <p>
-            I am a second-year B.Tech CSE-AIML student at VIT Pune, passionate about
-            designing and deploying intelligent systems that make healthcare safer,
-            faster, and more accessible.
-          </p>
-          <p>
-            My work spans medical image analysis, smart monitoring systems, digital twins,
-            and automation tools, with a strong foundation in DSA, DBMS, and full-stack
-            development.
-          </p>
-          <p>
-            Outside academics, hackathons, research, and open-source contributions help me
-            sharpen skills and collaborate with motivated teams.
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow fade-up" style="--delay:0ms">
+            <span class="status-dot" aria-hidden="true"></span>
+            System online — Pune, India
           </p>
 
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-value">10+</span>
-              <span class="stat-label">Projects</span>
+          <h1 class="hero-title fade-up" style="--delay:80ms">
+            Abhishek<br />
+            <span class="hero-title-accent">Bhangdiya</span>
+          </h1>
+
+          <p class="hero-tagline fade-up" style="--delay:160ms">
+            I build AI systems that turn messy, real-world signal —
+            handwriting, X-rays, cloud bills — into
+            <span class="cycle-wrap"><span class="cycle-text" id="cycle-text"></span><span class="cycle-cursor" aria-hidden="true"></span></span>
+          </p>
+
+          <div class="hero-readout fade-up" style="--delay:240ms" role="group" aria-label="Quick facts">
+            <div class="readout-row">
+              <span class="readout-label">role</span>
+              <span class="readout-value">AI/ML Engineer · B.Tech AIML, VIT Pune</span>
             </div>
-            <div class="stat">
-              <span class="stat-value">3+</span>
-              <span class="stat-label">Domains</span>
+            <div class="readout-row">
+              <span class="readout-label">published</span>
+              <span class="readout-value">PulmoScan AI — ICTEAH 2026</span>
             </div>
-            <div class="stat">
-              <span class="stat-value">2nd</span>
-              <span class="stat-label">Year</span>
+            <div class="readout-row">
+              <span class="readout-label">building</span>
+              <span class="readout-value">ScriptCare — paper under review</span>
+            </div>
+            <div class="readout-row">
+              <span class="readout-label">status</span>
+              <span class="readout-value status-live">Open to internships &amp; research collabs</span>
             </div>
           </div>
-        </div>
 
-        <div class="about-cards reveal">
-          <div class="info-card glass-card">
-            <h3><i class="fa-solid fa-microchip"></i> Focus Areas</h3>
-            <ul>
-              <li>Medical AI & Image Processing</li>
-              <li>Smart Monitoring & IoT</li>
-              <li>Automation & Developer Tools</li>
-              <li>Digital Twin & Simulation</li>
-            </ul>
-          </div>
-          <div class="info-card glass-card">
-            <h3><i class="fa-solid fa-code"></i> Tech Stack</h3>
-            <ul>
-              <li>Python, C, JavaScript</li>
-              <li>HTML, CSS, SQL</li>
-              <li>Machine Learning, OpenCV</li>
-              <li>Git, GitHub, VS Code</li>
-            </ul>
-          </div>
-          <div class="info-card glass-card">
-            <h3><i class="fa-solid fa-bolt"></i> What I Value</h3>
-            <ul>
-              <li>Clean, maintainable code</li>
-              <li>User-centric problem solving</li>
-              <li>Fast learning and iteration</li>
-              <li>Clear documentation & teamwork</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PROJECTS ================= -->
-  <section class="section" id="projects">
-    <div class="container section-inner">
-      <div class="section-header reveal">
-        <h2>Featured <span class="gradient-text">Projects</span></h2>
-        <p>
-          A selection of projects spanning healthcare AI, smart systems, and web applications.
-        </p>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card glass-card reveal">
-          <div class="project-badge">Medical AI</div>
-          <h3>Lung Nodule Detection & Classification</h3>
-          <p>
-            Deep-learning based system to detect and classify lung nodules in chest CT scans,
-            assisting early diagnosis workflows.
-          </p>
-          <ul class="project-tags">
-            <li>Python</li>
-            <li>ML / DL</li>
-            <li>Medical Imaging</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-github"></i> Code
+          <div class="hero-actions fade-up" style="--delay:320ms">
+            <a href="#work" class="btn primary-btn magnetic">
+              View My Work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="#contact" class="btn ghost-btn magnetic">
+              Get in Touch <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
             </a>
           </div>
-        </article>
 
-        <!-- Project 2 -->
-        <article class="project-card glass-card reveal">
-          <div class="project-badge">Smart Systems</div>
-          <h3>Smart Tourist Safety Monitoring</h3>
-          <p>
-            AI, blockchain, and geo-fencing powered platform offering real-time alerts and
-            safety insights for tourists in sensitive zones.
-          </p>
-          <ul class="project-tags">
-            <li>AI/ML</li>
-            <li>Blockchain</li>
-            <li>Geo-fencing</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-github"></i> Code
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project-card glass-card reveal">
-          <div class="project-badge">Sustainability</div>
-          <h3>Waste Classification & Recycling Recommender</h3>
-          <p>
-            Image-based waste classification tool suggesting optimal recycling or disposal
-            strategies for different categories.
-          </p>
-          <ul class="project-tags">
-            <li>Computer Vision</li>
-            <li>Python</li>
-            <li>ML</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-github"></i> Code
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 4 -->
-        <article class="project-card glass-card reveal">
-          <div class="project-badge">Digital Twin</div>
-          <h3>IoT Digital Twin Prototype</h3>
-          <p>
-            Real-time digital twin of a physical system with sensor data visualization and
-            analytics dashboard for monitoring.
-          </p>
-          <ul class="project-tags">
-            <li>IoT</li>
-            <li>Dashboard</li>
-            <li>Data Viz</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-github"></i> Code
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 5 -->
-        <article class="project-card glass-card reveal">
-          <div class="project-badge">Web Dev</div>
-          <h3>Automation & Developer Tools</h3>
-          <p>
-            Scripts and utilities to speed up repetitive workflows using Python automation
-            and smart helpers for developers.
-          </p>
-          <ul class="project-tags">
-            <li>Python</li>
-            <li>Automation</li>
-            <li>CLI Tools</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-github"></i> Code
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 6 -->
-        <article class="project-card glass-card reveal">
-          <div class="project-badge">Academics</div>
-          <h3>EDI & Academic Mini Projects</h3>
-          <p>
-            A collection of electronics design, DBMS, and DS-based mini projects showcasing
-            concepts and implementation depth.
-          </p>
-          <ul class="project-tags">
-            <li>DSA</li>
-            <li>DBMS</li>
-            <li>Digital Electronics</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-github"></i> Code
-            </a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SKILLS ================= -->
-  <section class="section" id="skills">
-    <div class="container section-inner">
-      <div class="section-header reveal">
-        <h2>Technical <span class="gradient-text">Skills</span></h2>
-        <p>
-          A quick overview of core technologies and tools used across projects and coursework.
-        </p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skills-group glass-card reveal">
-          <h3><i class="fa-solid fa-terminal"></i> Programming</h3>
-          <div class="skill">
-            <span>Python</span>
-            <div class="skill-bar"><span data-level="90"></span></div>
-          </div>
-          <div class="skill">
-            <span>C</span>
-            <div class="skill-bar"><span data-level="80"></span></div>
-          </div>
-          <div class="skill">
-            <span>JavaScript</span>
-            <div class="skill-bar"><span data-level="75"></span></div>
-          </div>
-          <div class="skill">
-            <span>SQL</span>
-            <div class="skill-bar"><span data-level="70"></span></div>
-          </div>
-        </div>
-
-        <div class="skills-group glass-card reveal">
-          <h3><i class="fa-solid fa-brain"></i> AI / ML</h3>
-          <div class="skill">
-            <span>Machine Learning</span>
-            <div class="skill-bar"><span data-level="85"></span></div>
-          </div>
-          <div class="skill">
-            <span>Computer Vision</span>
-            <div class="skill-bar"><span data-level="80"></span></div>
-          </div>
-          <div class="skill">
-            <span>Data Processing</span>
-            <div class="skill-bar"><span data-level="75"></span></div>
-          </div>
-        </div>
-
-        <div class="skills-group glass-card reveal">
-          <h3><i class="fa-solid fa-layer-group"></i> Development</h3>
-          <div class="skill">
-            <span>HTML & CSS</span>
-            <div class="skill-bar"><span data-level="85"></span></div>
-          </div>
-          <div class="skill">
-            <span>Git & GitHub</span>
-            <div class="skill-bar"><span data-level="80"></span></div>
-          </div>
-          <div class="skill">
-            <span>REST & APIs</span>
-            <div class="skill-bar"><span data-level="70"></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= EDUCATION ================= -->
-  <section class="section" id="education">
-    <div class="container section-inner">
-      <div class="section-header reveal">
-        <h2>Education & <span class="gradient-text">Journey</span></h2>
-        <p>
-          Academic path and milestones shaping the foundation for AI/ML and software engineering.
-        </p>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item reveal glass-card">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>B.Tech CSE (AI & ML)</h3>
-            <p class="timeline-meta">VIT Pune · 2023 – Present</p>
-            <p>
-              Core courses: Data Structures & Algorithms, DBMS, OOP, Digital Electronics,
-              Climatology, AI/ML, and related labs.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal glass-card">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>AI/ML & Project Work</h3>
-            <p class="timeline-meta">Self-driven · Ongoing</p>
-            <p>
-              Building medical AI systems, smart monitoring platforms, automation tools, and
-              participating in hackathons and research-driven projects.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section class="section" id="contact">
-    <div class="container section-inner">
-      <div class="section-header reveal">
-        <h2>Let’s <span class="gradient-text">Connect</span></h2>
-        <p>
-          Open to research collaborations, internships, and impactful tech projects.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card glass-card reveal">
-          <h3><i class="fa-regular fa-address-card"></i> Contact Info</h3>
-          <ul class="contact-list">
-            <li>
-              <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:abhishekbhangdiya@example.com">
-                abhishekbhangdiya@example.com
-              </a>
-            </li>
-            <li>
-              <i class="fa-brands fa-linkedin"></i>
-              <a href="https://www.linkedin.com/in/abhishekbhangdiya" target="_blank" rel="noreferrer">
-                linkedin.com/in/abhishekbhangdiya
-              </a>
-            </li>
-            <li>
+          <div class="hero-socials fade-up" style="--delay:380ms">
+            <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer" aria-label="GitHub profile">
               <i class="fa-brands fa-github"></i>
-              <a href="https://github.com/Abhishek2586" target="_blank" rel="noreferrer">
-                github.com/Abhishek2586
-              </a>
-            </li>
-          </ul>
+            </a>
+            <a href="https://www.linkedin.com/in/abhishekbhangdiya" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:abhishekbhangdiya@gmail.com" aria-label="Send an email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator">
+        <span>Scroll</span>
+        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="container section-inner">
+        <div class="section-header reveal">
+          <p class="eyebrow">// 01 — about</p>
+          <h2>The person behind the <span class="text-signal">commits</span></h2>
         </div>
 
-        <form class="contact-form glass-card reveal" onsubmit="event.preventDefault();">
-          <h3><i class="fa-regular fa-paper-plane"></i> Quick Message</h3>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="name">Name</label>
-              <input id="name" type="text" placeholder="Your name" required />
-            </div>
-            <div class="form-field">
-              <label for="email">Email</label>
-              <input id="email" type="email" placeholder="your@email.com" required />
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm a third-year B.Tech AI &amp; ML student at Vishwakarma Institute of
+              Technology, Pune (2024–2028), building systems that sit at the intersection
+              of healthcare, computer vision, and agentic AI.
+            </p>
+            <p>
+              My work follows a simple loop: take messy real-world input — a handwritten
+              prescription, a CT scan, a sprawling cloud bill — and turn it into something
+              a person or system can act on. That loop has produced a published paper,
+              a 48-hour hackathon build, a patent application, and a few apps real people use.
+            </p>
+            <p>
+              Outside the lab, I help run <span class="highlight">IEEE CIS</span> as
+              Management Secretary and coordinate operations for the
+              <span class="highlight">GedIT Coding Club</span> — mostly an excuse to drag
+              more people into hackathons.
+            </p>
+
+            <div class="about-roles">
+              <div class="role-chip"><i class="fa-solid fa-users" aria-hidden="true"></i> IEEE CIS — Management Secretary</div>
+              <div class="role-chip"><i class="fa-solid fa-code-branch" aria-hidden="true"></i> GedIT Coding Club — Operations Coordinator</div>
             </div>
           </div>
-          <div class="form-field">
-            <label for="message">Message</label>
-            <textarea id="message" rows="4" placeholder="Write your message..." required></textarea>
+
+          <div class="vitals-grid reveal" aria-label="Quick stats">
+            <div class="vital-card">
+              <span class="vital-value" data-count="8">0</span>
+              <span class="vital-label">Projects shipped</span>
+            </div>
+            <div class="vital-card">
+              <span class="vital-value" data-count="1">0</span>
+              <span class="vital-label">Paper published<br />(ICTEAH 2026)</span>
+            </div>
+            <div class="vital-card">
+              <span class="vital-value" data-count="48">0</span>
+              <span class="vital-label">Hours — solo<br />hackathon build</span>
+            </div>
+            <div class="vital-card">
+              <span class="vital-value" data-count="5">0</span>
+              <span class="vital-label">Google Cloud<br />certifications</span>
+            </div>
+            <div class="vital-card">
+              <span class="vital-value" data-count="1">0</span>
+              <span class="vital-label">Patent<br />application filed</span>
+            </div>
+            <div class="vital-card">
+              <span class="vital-value" data-count="3">0</span>
+              <span class="vital-label">Year @ VIT Pune<br />(2024–28)</span>
+            </div>
           </div>
-          <button type="submit" class="btn primary-btn full-width">
-            Send Message <i class="fa-solid fa-paper-plane"></i>
-          </button>
-          <p class="form-note">
-            This is a demo form. You can connect with me directly via email or LinkedIn.
-          </p>
-        </form>
+        </div>
+
+        <div class="focus-grid">
+          <div class="focus-card reveal" style="--delay:0ms">
+            <div class="focus-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></div>
+            <h3>Healthcare Computer Vision</h3>
+            <p>YOLOv8, TrOCR, BioClinicalBERT — reading scans and handwriting that humans struggle with.</p>
+          </div>
+          <div class="focus-card reveal" style="--delay:80ms">
+            <div class="focus-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+            <h3>Multi-Agent Agentic AI</h3>
+            <p>LangGraph, LangChain, Groq — pipelines of specialised agents that hand work to one another.</p>
+          </div>
+          <div class="focus-card reveal" style="--delay:160ms">
+            <div class="focus-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+            <h3>Full-Stack AI Apps</h3>
+            <p>React, FastAPI, Firebase — shipping the model behind an interface people actually use.</p>
+          </div>
+          <div class="focus-card reveal" style="--delay:240ms">
+            <div class="focus-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+            <h3>NLP Pipelines</h3>
+            <p>NER, fuzzy matching, RAG — pulling structure out of unstructured text and documents.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Abhishek Bhangdiya. Built with passion.</p>
-      <p>“Always learning, always building, always innovating.”</p>
-    </div>
-  </footer>
+    <!-- ================= WORK / PROJECTS ================= -->
+    <section class="section" id="work">
+      <div class="container section-inner">
+        <div class="section-header reveal">
+          <p class="eyebrow">// 02 — work</p>
+          <h2>Eight builds, <span class="text-signal">three signals</span></h2>
+          <p class="section-desc">
+            Reading what doctors write, watching what scans show, and catching what
+            spreadsheets miss.
+          </p>
+        </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+        <div class="filter-bar reveal" role="tablist" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All <span class="count">08</span></button>
+          <button class="filter-btn" data-filter="healthcare" role="tab" aria-selected="false">Healthcare AI <span class="count">03</span></button>
+          <button class="filter-btn" data-filter="agentic" role="tab" aria-selected="false">Agentic Systems <span class="count">03</span></button>
+          <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web &amp; Apps <span class="count">02</span></button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+
+          <!-- 01 ScriptCare -->
+          <article class="project-card reveal" data-category="healthcare">
+            <div class="project-head">
+              <span class="case-id">CASE_01</span>
+              <span class="status-pill status-amber"><span class="dot" aria-hidden="true"></span>In review</span>
+            </div>
+            <h3>ScriptCare</h3>
+            <p class="project-sub">AI Prescription Analyser</p>
+            <p class="project-desc">
+              A 5-stage pipeline that detects a prescription, reads the doctor's handwriting,
+              tags medication entities, validates drug names, and serves the result through
+              an API — turning illegible scrawl into queryable data.
+            </p>
+            <ul class="tag-list">
+              <li>YOLOv8-Nano</li><li>TrOCR</li><li>BioClinicalBERT</li><li>FastAPI</li><li>React</li>
+            </ul>
+            <div class="project-links">
+              <span class="link-disabled"><i class="fa-solid fa-lock" aria-hidden="true"></i> Repo private — paper under review</span>
+            </div>
+          </article>
+
+          <!-- 02 PulmoScan AI -->
+          <article class="project-card reveal" data-category="healthcare">
+            <div class="project-head">
+              <span class="case-id">CASE_02</span>
+              <span class="status-pill status-green"><span class="dot" aria-hidden="true"></span>Published</span>
+            </div>
+            <h3>PulmoScan AI</h3>
+            <p class="project-sub">Lung Cancer Detection</p>
+            <p class="project-desc">
+              Analyses chest X-rays and CT scans for early-stage lung cancer, generating
+              real-time risk heatmaps, severity scoring, and a patient registry dashboard.
+              Published at ICTEAH 2026, KJ Somaiya College of Engineering.
+            </p>
+            <ul class="tag-list">
+              <li>Google Gemini</li><li>React.js</li><li>Computer Vision</li><li>TypeScript</li><li>Firebase</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/Abhishek2586/Lung_Nodule_Detection" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <!-- 03 CostSentinel -->
+          <article class="project-card reveal" data-category="agentic">
+            <div class="project-head">
+              <span class="case-id">CASE_03</span>
+              <span class="status-pill status-neutral"><span class="dot" aria-hidden="true"></span>Hackathon build</span>
+            </div>
+            <h3>CostSentinel</h3>
+            <p class="project-sub">Enterprise Cost Intelligence</p>
+            <p class="project-desc">
+              A multi-agent system with a Sentinel → Diagnosis → Action → Executor pipeline,
+              handling vendor duplicate detection, cloud cost spike diagnosis, and SLA breach
+              prevention. Built solo in 48 hours for the ET Gen AI Hackathon 2026.
+            </p>
+            <ul class="tag-list">
+              <li>LangGraph</li><li>Groq Llama 3.3-70B</li><li>SQLite</li><li>Streamlit</li>
+            </ul>
+            <div class="project-links">
+              <span class="link-disabled"><i class="fa-solid fa-lock" aria-hidden="true"></i> Repo private — hackathon build</span>
+            </div>
+          </article>
+
+          <!-- 04 LocalXplorer -->
+          <article class="project-card reveal" data-category="web">
+            <div class="project-head">
+              <span class="case-id">CASE_04</span>
+              <span class="status-pill status-green"><span class="dot" aria-hidden="true"></span>Live</span>
+            </div>
+            <h3>LocalXplorer</h3>
+            <p class="project-sub">Cultural Discovery PWA</p>
+            <p class="project-desc">
+              A production progressive web app for smart, location-aware urban exploration.
+              Lighthouse score 90+ via lazy loading, code splitting, and service-worker
+              caching. Real users, real traffic.
+            </p>
+            <ul class="tag-list">
+              <li>React 18</li><li>TypeScript</li><li>Firebase</li><li>Tailwind CSS</li><li>PWA</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://localxplorer.web.app" target="_blank" rel="noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live app
+              </a>
+            </div>
+          </article>
+
+          <!-- 05 File-AI -->
+          <article class="project-card reveal" data-category="agentic">
+            <div class="project-head">
+              <span class="case-id">CASE_05</span>
+              <span class="status-pill status-neutral"><span class="dot" aria-hidden="true"></span>Internship build</span>
+            </div>
+            <h3>File-AI</h3>
+            <p class="project-sub">RAG Document Intelligence</p>
+            <p class="project-desc">
+              An enterprise document intelligence platform — semantic search and conversational
+              querying over uploaded files, with full ingestion → embedding → retrieval
+              pipelines. Built during the Infosys Springboard Internship 6.0.
+            </p>
+            <ul class="tag-list">
+              <li>RAG</li><li>LLMs</li><li>Embeddings</li><li>FastAPI</li><li>Python</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/Abhishek2586/File-AI" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <!-- 06 UrbanSimAI -->
+          <article class="project-card reveal" data-category="agentic">
+            <div class="project-head">
+              <span class="case-id">CASE_06</span>
+              <span class="status-pill status-neutral"><span class="dot" aria-hidden="true"></span>Built</span>
+            </div>
+            <h3>UrbanSimAI</h3>
+            <p class="project-sub">Complaint Routing System</p>
+            <p class="project-desc">
+              City-scale complaint routing using NLP classification and CNN pattern
+              recognition, automatically directing issues to the right department —
+              a small simulation of urban governance decision-making.
+            </p>
+            <ul class="tag-list">
+              <li>NLP</li><li>CNN</li><li>TypeScript</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/Abhishek2586/UrbanSimAI" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <!-- 07 NEXORA Health -->
+          <article class="project-card reveal" data-category="healthcare">
+            <div class="project-head">
+              <span class="case-id">CASE_07</span>
+              <span class="status-pill status-amber"><span class="dot" aria-hidden="true"></span>Patent pending</span>
+            </div>
+            <h3>NEXORA Health</h3>
+            <p class="project-sub">IoT Patient Monitoring</p>
+            <p class="project-desc">
+              Streams patient vitals in real time from IoT sensors. An ML-based anomaly
+              detector flags irregular readings before they become critical events.
+              Currently at the patent examination stage.
+            </p>
+            <ul class="tag-list">
+              <li>ESP32</li><li>FastAPI</li><li>Random Forest</li><li>TypeScript</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/Abhishek2586/NEXORA-HEALTH" target="_blank" rel="noreferrer">
+            
